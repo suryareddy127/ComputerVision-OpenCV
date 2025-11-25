@@ -51,42 +51,60 @@ stitcher = cv2.Stitcher_create()
 ## Visual Workflow Diagram
 Here’s a simple ASCII-style flowchart to show the OpenCV pipeline:
   
-          
-          ┌───────────────┐
-          │   Input Data  │
-          │ (Image/Video) │
-          └───────┬───────┘
-                  │
-                  ▼
-        ┌───────────────────┐
-        │ Preprocessing     │
-        │ (Resize, Gray,    │
-        │ Noise Removal)    │
-        └───────┬───────────┘
-                │
-                ▼
-   ┌─────────────────────────────┐
-   │ Image Processing Techniques │
-   │ - Arithmetic Ops            │
-   │ - Filtering                 │
-   │ - Morphology                │
-   │ - Thresholding              │
-   └───────────┬─────────────────┘
-               │
-               ▼
-     ┌─────────────────────┐
-     │ Feature Extraction  │
-     │ (Contours, Edges,   │
-     │ Alignment)          │
-     └───────────┬─────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│                               Computer Vision Flow                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Input
+  ┌─────────────────────────┐
+  │ Image(s) / Video stream │
+  └──────────────┬──────────┘
                  │
                  ▼
-     ┌─────────────────────┐
-     │ Applications        │
-     │ - Panorama Stitching│
-     │ - Object Detection  │
-     │ - AR, OCR, etc.     │
-     └─────────────────────┘
+Preprocessing
+  ┌───────────────────────────────────────────────────────────┐
+  │ Resize • Color convert (BGR→Gray) • Denoise (Blur/Median) │
+  │ Normalize • Crop/ROI • Gamma/Histogram adjustments        │
+  └──────────────┬────────────────────────────────────────────┘
+                 │
+                 ▼
+Core image processing
+  ┌───────────────────────────────────────────────────────────┐
+  │ Arithmetic (add/subtract/multiply)                        │
+  │ Filtering (blur/sharpen/edge detect: Sobel, Canny)        │
+  │ Morphology (erode/dilate/open/close/gradient)             │
+  │ Thresholding (global/adaptive/Otsu)                       │
+  └──────────────┬────────────────────────────────────────────┘
+                 │
+                 ▼
+Feature extraction
+  ┌───────────────────────────────────────────────────────────┐
+  │ Contours • Keypoints (ORB/SIFT/SURF) • Descriptors        │
+  │ Corners (Harris) • Lines (Hough) • Regions (MSER)         │
+  └──────────────┬────────────────────────────────────────────┘
+                 │
+                 ▼
+Geometry & alignment
+  ┌───────────────────────────────────────────────────────────┐
+  │ Feature matching • Homography • Warp/Affine/Perspective   │
+  │ Registration • Panorama stitching                         │
+  └──────────────┬────────────────────────────────────────────┘
+                 │
+                 ▼
+Analysis & decisions
+  ┌───────────────────────────────────────────────────────────┐
+  │ Measurements (area, perimeter, centroid)                  │
+  │ Detection/Tracking • Classification (ML/DL)               │
+  │ OCR • Quality checks • Event triggers                     │
+  └──────────────┬────────────────────────────────────────────┘
+                 │
+                 ▼
+Output
+  ┌───────────────────────────────────────────────────────────┐
+  │ Visual overlays • Saved images/videos • Metrics/Reports   │
+  │ Real-time UI dashboards • API responses                   │
+  └───────────────────────────────────────────────────────────┘
 
 
 ### Applications of OpenCV
