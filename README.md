@@ -48,64 +48,9 @@ Combine overlapping images into a wide-angle view.
 stitcher = cv2.Stitcher_create()
 (status, pano) = stitcher.stitch([img1, img2])
 
-## Visual Workflow Diagram
-Here’s a simple ASCII-style flowchart to show the OpenCV pipeline:
-  
+##  Workflow Diagram
 
-┌────────────────────────────────────────────────────────────────────────────┐
-│                               Computer Vision Flow                         │
-└────────────────────────────────────────────────────────────────────────────┘
-
-Input
-  ┌─────────────────────────┐
-  │ Image(s) / Video stream │
-  └──────────────┬──────────┘
-                 │
-                 ▼
-Preprocessing
-  ┌───────────────────────────────────────────────────────────┐
-  │ Resize • Color convert (BGR→Gray) • Denoise (Blur/Median) │
-  │ Normalize • Crop/ROI • Gamma/Histogram adjustments        │
-  └──────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-Core image processing
-  ┌───────────────────────────────────────────────────────────┐
-  │ Arithmetic (add/subtract/multiply)                        │
-  │ Filtering (blur/sharpen/edge detect: Sobel, Canny)        │
-  │ Morphology (erode/dilate/open/close/gradient)             │
-  │ Thresholding (global/adaptive/Otsu)                       │
-  └──────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-Feature extraction
-  ┌───────────────────────────────────────────────────────────┐
-  │ Contours • Keypoints (ORB/SIFT/SURF) • Descriptors        │
-  │ Corners (Harris) • Lines (Hough) • Regions (MSER)         │
-  └──────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-Geometry & alignment
-  ┌───────────────────────────────────────────────────────────┐
-  │ Feature matching • Homography • Warp/Affine/Perspective   │
-  │ Registration • Panorama stitching                         │
-  └──────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-Analysis & decisions
-  ┌───────────────────────────────────────────────────────────┐
-  │ Measurements (area, perimeter, centroid)                  │
-  │ Detection/Tracking • Classification (ML/DL)               │
-  │ OCR • Quality checks • Event triggers                     │
-  └──────────────┬────────────────────────────────────────────┘
-                 │
-                 ▼
-Output
-  ┌───────────────────────────────────────────────────────────┐
-  │ Visual overlays • Saved images/videos • Metrics/Reports   │
-  │ Real-time UI dashboards • API responses                   │
-  └───────────────────────────────────────────────────────────┘
-
+Input → Preprocess → Process → Extract features → Align/Model → Analyze → Output
 
 ### Applications of OpenCV
 - Object detection and tracking
