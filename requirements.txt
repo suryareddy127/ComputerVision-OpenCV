@@ -1,0 +1,24 @@
+
+# Core OpenCV
+opencv-python
+
+# Extra OpenCV contrib modules (SIFT, SURF, ArUco, face recognition, etc.)
+opencv-contrib-python
+
+# Essential scientific libraries
+numpy
+scipy
+
+# Visualization and plotting
+matplotlib
+
+# Image handling
+Pillow
+
+# Machine learning / deep learning support
+scikit-learn
+tensorflow
+torch
+torchvision
+
+IPython 

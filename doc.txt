@@ -1,0 +1,8 @@
+- https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+
+
+## object detection
+- https://docs.opencv.org/4.x/d2/d64/tutorial_table_of_content_objdetect.html
+
+## deep neural networks 
+- https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html
