@@ -14,39 +14,39 @@
 2. Video Capture
    
 ### 🎨 Image Processing Techniques
-1. Arithmetic Operations
+##### 1. Arithmetic Operations
 - Addition → Brightness increase
 - Subtraction → Darkening
 - Multiplication → Contrast enhancement
 - Division → Normalization
-2. Filtering
+##### 2. Filtering
 - Blurring → Noise reduction
 - Sharpening → Highlight details
 - Edge Detection → Sobel, Canny
-3. Morphological Operations
+##### 3. Morphological Operations
 - Erosion → Removes noise
 - Dilation → Fills gaps
 - Opening → Noise removal
 - Closing → Hole filling
 - Gradient → Boundary extraction
-4. Thresholding
+##### 4. Thresholding
 - Binary Thresholding → Convert grayscale to black & white
 - Adaptive Thresholding → Handles uneven lighting
 - Otsu’s Method → Automatic threshold selection
 
-### 📐 Contours
-Contours are curves joining continuous points along boundaries.
-contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-cv2.drawContours(img, contours, -1, (0,255,0), 2)
+###  Contours
+- Contours are curves joining continuous points along boundaries.
+- contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+- cv2.drawContours(img, contours, -1, (0,255,0), 2)
 
-### 🔄 Image Alignment
-Aligns one image with another using feature matching (ORB, SIFT, SURF) and homography.
-👉 Useful in medical imaging, panorama stitching, and AR.
+###  Image Alignment
+- Aligns one image with another using feature matching (ORB, SIFT, SURF) and homography.
+- Useful in medical imaging, panorama stitching, and AR.
 
 ### Panorama (Image Stitching)
-Combine overlapping images into a wide-angle view.
-stitcher = cv2.Stitcher_create()
-(status, pano) = stitcher.stitch([img1, img2])
+- Combine overlapping images into a wide-angle view.
+- stitcher = cv2.Stitcher_create()
+- (status, pano) = stitcher.stitch([img1, img2])
 
 ##  Workflow Diagram
 
