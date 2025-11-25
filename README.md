@@ -50,6 +50,8 @@ stitcher = cv2.Stitcher_create()
 
 ## Visual Workflow Diagram
 Here’s a simple ASCII-style flowchart to show the OpenCV pipeline:
+  
+          
           ┌───────────────┐
           │   Input Data  │
           │ (Image/Video) │
